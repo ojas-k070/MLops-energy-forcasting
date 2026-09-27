@@ -9,26 +9,34 @@ stages:
       size: 132960755
     - path: src/data_loader.py
       hash: md5
-      md5: 446c0445295efc9d9855bfa7a4aa2de9
-      size: 881
+      md5: ae04ca844e1bc7c8f33171432281385c
+      size: 893
     outs:
     - path: data/processed/energy_clean.csv
       hash: md5
-      md5: 5b6f8bafbb143499d94129f0a2555a93
-      size: 893292
+      md5: 3fba6cae9b3c50082498e1190753dba3
+      size: 927882
   train:
     cmd: python src/train_model.py
     deps:
     - path: data/processed/energy_clean.csv
       hash: md5
-      md5: 5b6f8bafbb143499d94129f0a2555a93
-      size: 893292
+      md5: 3fba6cae9b3c50082498e1190753dba3
+      size: 927882
+    - path: src/features.py
+      hash: md5
+      md5: 7d77188f5629efa2940a23c26d53335a
+      size: 3360
     - path: src/train_model.py
       hash: md5
-      md5: bda64a627680358ac72a721ce08db167
-      size: 2410
+      md5: bcac45a995f74934c0d6fc69dc5f49f0
+      size: 6647
     outs:
+    - path: models/latest_model_metadata.json
+      hash: md5
+      md5: be2cab0698ba9275b73441b0cd1da464
+      size: 924
     - path: models/latest_model_path.txt
       hash: md5
-      md5: f9d82f68f3ab05e5cd1ab3d089b09f08
+      md5: ffcef826bda4f04173aa8df18e4647d9
       size: 26
